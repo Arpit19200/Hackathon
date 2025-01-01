@@ -6,7 +6,7 @@ const Header = () => {
     <div className="flex w-full gap-12 max-h-40px items-center px-16 py-4 my-0 text-black max-md:pl-5 border-b-2">
        <div className='flex flex-row w-3/4'><NavigationItems/></div> 
       <div className="flex gap-10 justify-center items-center w-1/4 ">
-        <div className="flex gap-3 justify-between items-center  my-auto ">
+        <Link to="profile" className="flex gap-3 justify-between items-center  my-auto ">
       <div className="self-stretch my-auto">jhonny_sins</div>
       <img
         loading="lazy"
@@ -14,7 +14,7 @@ const Header = () => {
         className="object-contain shrink-0 self-stretch my-auto aspect-square rounded-[50px] w-[63px]"
         alt="User profile"
       />
-    </div>
+    </Link>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ export default function NavigationItem() {
       News
 
     </Link>
-    <Link to="" className="gap-2.5 self-stretch p-2.5 my-auto whitespace-nowrap bg-white rounded-xl">
+    <Link to="Quiz" className="gap-2.5 self-stretch p-2.5 my-auto whitespace-nowrap bg-white rounded-xl">
 
       Solve Quiz
 

@@ -9,10 +9,11 @@ import LoginForm from './components/Sign-in/auth/LoginForm.jsx'
 import OtpVerification from './components/OTPinput/otp/OtpVerification.jsx'
 import { NewPassword } from './components/Newpassword/auth/NewPassword.jsx'
 import Header from './components/header/header.jsx'
-import { NewsSection } from './components/NewsPage/NewsSection.jsx'
-import NewsArticle from './components/NewsInfo/newsArticle/NewsArticle.jsx'
+import  NewsList from './components/NewsPage/NewsList.jsx'
 import { JoinNetwork } from './components/CommunityPage/JoinNetwork.jsx'
 import { LeaderboardView } from './components/leaderboard/LeaderboardView.jsx'
+import Game from './components/SolveQuiz/Game.jsx'
+import { ProfilePage } from './components/ProfilePage/profile/ProfilePage.jsx'
 
 const route = createBrowserRouter([
   {
@@ -37,11 +38,15 @@ const route = createBrowserRouter([
     children:[
       {
         path:"",
-        element:<NewsSection/>
+        element:<NewsList/>
       },
       {
-        path:"news",
-        element:<NewsArticle/>
+        path:"Quiz",
+        element:<Game/>
+      },
+      {
+        path:"profile",
+        element:<ProfilePage/>
       },
       {
         path:"ranking",

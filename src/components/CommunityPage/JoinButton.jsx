@@ -3,7 +3,7 @@ import * as React from "react";
 export function JoinButton() {
   return (
     <button
-      className="flex gap-0.5 justify-center items-center self-center px-10 py-2.5 mt-9 max-w-full bg-cyan-300 rounded-[50px] w-[340px] max-md:px-5"
+      className="flex gap-0.5 justify-center items-center text-3xl self-center px-10 py-2.5 mt-9 max-w-full bg-cyan-300 rounded-[50px] w-[340px] max-md:px-5"
       onClick={() => (window.location.href = "/join")}
       aria-label="Join Server"
     >

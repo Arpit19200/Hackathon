@@ -1,29 +1,36 @@
-import * as React from "react";
+import { format } from 'date-fns';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
-export function NewsCard({ image, title, description, showReadMore = true }) {
+const NewsCard = ({ article }) => {
+  const formattedDate = format(new Date(article.datetime * 1000), 'MMM dd, yyyy');
+
   return (
-    <div className="flex overflow-hidden flex-col justify-between mx-6 px-6 py-4  bg-white rounded-xl border border-solid border-black border-opacity-30 w-fit-content max-md:px-5 max-md:max-w-full">
-      <div className="flex  gap-7 justify-center items-center w-full max-md:max-w-full">
-        <img
-          loading="lazy"
-          src={image}
-          alt={title}
-          className="object-contain self-stretch my-auto rounded-xl aspect-[1.5] min-w-[240px] w-2/5"
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      {article.image && (
+        <img 
+          src={article.image} 
+          alt={article.headline} 
+          className="w-full h-48 object-cover"
         />
-        <div className="flex flex-col self-stretch my-auto min-w-[240px] w-[492px] max-md:max-w-full">
-          <div className="text-2xl font-semibold text-black max-md:max-w-full">
-            {title}
-          </div>
-          <div className="flex flex-col mt-1 max-w-full text-xl w-[492px]">
-            <div className="text-black max-md:max-w-full">{description}</div>
-            {showReadMore && (
-              <div className="self-end mr-6 text-blue-700 max-md:mr-2.5">
-                Read more
-              </div>
-            )}
-          </div>
+      )}
+      <div className="p-4">
+        <h2 className="text-xl font-semibold mb-2 line-clamp-2">{article.headline}</h2>
+        <p className="text-gray-600 mb-4 line-clamp-3">{article.summary}</p>
+        <div className="flex justify-between items-center">
+          <span className="text-sm text-gray-500">{formattedDate}</span>
+          <a
+            href={article.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-600 hover:text-blue-800"
+          >
+            Read more
+            <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-1" />
+          </a>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default NewsCard;
